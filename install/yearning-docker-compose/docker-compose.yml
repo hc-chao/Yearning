@@ -20,12 +20,16 @@ services:
     depends_on: 
       - db
     ports:
-      - "8080:8000"
+      - "8082:8000"
     environment:
       HOST: localhost
       MYSQL_PASSWORD: yearning
       MYSQL_USER: root
       MYSQL_ADDR: db
-
+  inception:
+    build: inception
+    container_name: yearning_inception
+    ports:
+      - 6669:6669
 # 默认账号：admin，默认密码：Yearning_admin
 # 感谢 eacdy 张功震 贡献
